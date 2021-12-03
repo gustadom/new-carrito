@@ -9,7 +9,8 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <ItemListContainer />
+      <ItemListContainer categoryId="MLA1071" />
+      <ItemListContainer categoryId="MLA1367" />
     </div>
   )
 }
