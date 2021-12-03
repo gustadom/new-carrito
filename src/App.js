@@ -3,6 +3,7 @@ import 'semantic-ui-css/semantic.min.css'
 import React from 'react'
 import ItemListContainer from './components/ItemListContainer';
 import Navbar from './components/Navbar';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 
 const App = () => {
@@ -10,7 +11,7 @@ const App = () => {
     <div>
       <Navbar />
       <ItemListContainer categoryId="MLA1071" />
-      <ItemListContainer categoryId="MLA1367" />
+      <ItemDetailContainer />
     </div>
   )
 }

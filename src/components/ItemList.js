@@ -9,8 +9,8 @@ const ItemList = ({ items }) => {
                 {
 
                     items.map((item) => (
-                        <div className="four wide column">
-                            <Item item={item} key={item.id} />
+                        <div className="four wide column" key={item.id}>
+                            <Item item={item} />
                         </div>
 
                     ))
