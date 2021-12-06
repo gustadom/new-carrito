@@ -5,10 +5,10 @@ const Navbar = () => {
     return (
         <div>
             <div className="ui secondary menu ">
-                <a className="active item">Mr-Beer</a>
-                <a className="item">Home</a>
-                <a className="item">Productos</a>
-                <a className="item">Contacto</a>
+                <a href="." className="active item">Mr-Beer</a>
+                <a href="." className="item">Home</a>
+                <a href="." className="item">Productos</a>
+                <a href="." className="item">Contacto</a>
                 <div className="right menu">
                     <a href="." className="item">
                         <CartWidget />
