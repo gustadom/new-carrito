@@ -19,36 +19,24 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     return (
         <>
-            <div className="ui cards">
-                <div className="card">
-                    <div className="image">
-                        <img src="https://semantic-ui.com/images/avatar2/large/elyse.png" alt="image" />
-                        <div className="content">
-                            <div className="header">Producto</div>
-                            <div className="meta">Categoria</div>
-                            <div className="description">Descripcion del Producto</div>
-                        </div>
-                        <div className="extra content">
-                            <div className="ui three buttons"></div>
-                            <div className="ui basic red button" onClick={restaQty}>-</div>
-                            <div className="ui basic button">{qty}</div>
-                            <div className="ui basic green button" onClick={sumaQty}>+</div>
-                        </div>
+
+            <div className="ui three buttons" style={{ marginBottom: 10 }}>
+                <div className="ui basic red button" onClick={restaQty}>-</div>
+                <div className="ui basic button">{qty}</div>
+                <div className="ui basic green button" onClick={sumaQty}>+</div>
+            </div>
+            {
+                qty > 0 ?
+                    <div className="ui buttom attached button" onClick={() => onAdd()} >
+                        <i className="cart icon"></i>
+                        Añadir al carrito
                     </div>
-                    {
-                        qty > 0 ?
-                            <div className="ui basic attached button" onClick={() => onAdd(qty)}>
-                                <i className="cart icon"></i>
-                                Añadir al carrito
-                            </div>
-                            :
-                            <div className="ui basic attached button disabled" onClick={() => onAdd(qty)}>
-                                <i className="cart icon"></i>
-                                Añadir al carrito
-                            </div>
-                    }
-                </div >
-            </div >
+                    :
+                    <div className="ui buttom attached button disabled">
+                        <i className="cart icon"></i>
+                        Añadir al carrito
+                    </div>
+            }
         </>
 
     )

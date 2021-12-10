@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail';
 
 const ItemDetailContainer = () => {
@@ -7,14 +8,17 @@ const ItemDetailContainer = () => {
 
     const [loading, setLoading] = useState(true)
 
+    const params = useParams()
+
+
     useEffect(() => {
         setTimeout(() => {
-            fetch(`https://api.mercadolibre.com/sites/MLA/search?q=Nike&limit=1`)
+            fetch(`https://api.mercadolibre.com/items/${params.id}`)
                 .then((response) => response.json())
-                .then(respJSON => { setItem(respJSON.results[0]); setLoading(false) })
+                .then(respJSON => { console.log(respJSON); setItem(respJSON); setLoading(false) })
                 .catch(error => console.log('Error:', error))
-        }, 3000)
-    }, [])
+        }, 0)
+    }, [params.id])
 
     return (
         <>
@@ -22,7 +26,12 @@ const ItemDetailContainer = () => {
                 loading ?
                     <h5>Cargando detalle de producto...</h5>
                     :
-                    <ItemDetail item={item} />
+                    <div className='container'>
+                        <div className='contain'>
+                            <ItemDetail item={item} />
+                        </div>
+                    </div>
+
             }
         </>
     )

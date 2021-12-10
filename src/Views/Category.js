@@ -3,11 +3,13 @@ import { useParams } from 'react-router-dom'
 import ItemListContainer from '../components/ItemListContainer';
 
 const Category = () => {
-    const params = useParams();
+    const { categoryId, categoryName } = useParams();
     return (
-        <>
-            <ItemListContainer CategoryId={params.id} />
-        </>
+        <div className='container'>
+            <div className='contain'>
+                <ItemListContainer categoryId={categoryId} categoryName={categoryName} />
+            </div>
+        </div>
     )
 }
 
